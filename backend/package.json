@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "set BUILD_ENV=dev&&node ./bin/www",
+    "keygen": "openssl rand -hex 32"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "~1.9.0",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.7.6",
+    "sequelize-encrypted": "^1.0.0",
+    "sequelize-virtual-fields": "^1.1.0",
+    "steam-totp": "^2.1.0",
+    "steam-user": "^4.6.1",
+    "xlsx": "^0.14.2"
+  }
+}
