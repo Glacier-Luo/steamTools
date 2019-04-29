@@ -88,3 +88,18 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+// const crypto = require('crypto');
+// const hmac = crypto.createHmac('sha256', process.env.SECRET_KEY);
+const Crypto = require('../utils/crypto');
+let crypto = new Crypto();
+var Db = require('../utils/db');
+let db = new Db();
+db.user.sync({alter: true});
+db.user.findOrCreate({where:{username: 'admin'}, defaults: {password: crypto.sha256Encrypto('admin')}})
+    .then(([user, created]) => {
+      console.log(user.get({
+        plain: true
+      }));
+      console.log(created);
+    });

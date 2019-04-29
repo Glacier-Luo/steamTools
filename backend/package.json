@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "set BUILD_ENV=dev&&node ./bin/www",
-    "keygen": "openssl rand -hex 32"
+    "start": "cross-env BUILD_ENV=dev node ./bin/www",
+    "test": "node deploy.js",
+    "key": "node test/key.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
+    "cross-env": "^5.2.0",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "express-jwt": "^5.3.1",

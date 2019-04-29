@@ -23,6 +23,8 @@ function utils() {
             }
         });
     });
+
+    // this.refreshBalance = new
 }
 
 module.exports = utils;
